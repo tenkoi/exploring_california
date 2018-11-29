@@ -1,6 +1,8 @@
 require 'sinatra'
 
 get '/' do
+
+  @page_title = "Welcome to Exploring California"
   erb :index
 end
 
