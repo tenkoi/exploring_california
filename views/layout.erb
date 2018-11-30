@@ -8,11 +8,11 @@
     <script src="assets/javascripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="assets/javascripts/menus.js"></script>
   </head>
-  <body id="home">
+  <body id="<%= @body_id %>">
     <div id="wrapper">
 
       <div id="mainHeader">
-        <a href="index.html" title="home" class="logo">
+        <a href="/index" title="home" class="logo">
           <div id="logo">
             <h1>Explore California</h1>
           </div>
@@ -28,11 +28,11 @@
 
           <%
           quick_nav = ['Home', '/', 'Our Homepage'],
-          ['Tours', '/tours.html', 'Explore our Tours'],
-          ['Mission', '/mission.html', 'What We Think'],
-          ['Resources', '/resources.html', 'Guidance and planning'],
-          ['Exlporers', '/explorers.html', 'Join Our Community'],
-          ['Contact', '/contact.html', 'Contact and Support']
+          ['Tours', '/tours', 'Explore our Tours'],
+          ['Mission', '/mission', 'What We Think'],
+          ['Resources', '/resources', 'Guidance and planning'],
+          ['Exlporers', '/explorers', 'Join Our Community'],
+          ['Contact', '/contact', 'Contact and Support']
           %>
           <ul id="quickNav">
             <% quick_nav.each do |item| %>
@@ -43,9 +43,9 @@
         <div id="footerResources">
           <h1>Resources</h1>
           <ul id="quickNav">
-            <li><a href="resources/faq.html" title="Our home page">FAQ</a></li>
-            <li><a href="support.html" title="Need help?">Support</a></li>
-            <li><a href="resources/legal.html" title="The fine print">Legal</a></li>
+            <li><a href="/resources/faq" title="Our home page">FAQ</a></li>
+            <li><a href="/support" title="Need help?">Support</a></li>
+            <li><a href="/resources/legal" title="The fine print">Legal</a></li>
           </ul>
         </div>
         <div id="companyInfo">
