@@ -1,52 +1,54 @@
 require 'sinatra'
 
+require_relative('helpers.rb')
+
 get '/' do
   @page_title = "Welcome to Exploring California"
   @body_id = "home"
-  erb :index
+  render_view :index
 end
 
 get '/contact' do
   @page_title = "Explorer California: Contact Us"
-  erb :contact
+  render_view :contact
 end
 
 get '/explorers' do
   @page_title = "Explorer California: Explorers"
-  erb :explorers
+  render_view :explorers
 end
 
 get '/mission' do
   @page_title = "Explorer California: Mission"
-  erb :mission
+  render_view :mission
 end
 
 get '/resources' do
   @page_title = "Explorer California: Resources"
-  erb :resources
+  render_view :resources
 end
 
 get '/resources/faq' do
   @page_title = "Explorer California: FAQ"
-  erb :'resources/faq'.to_sym
+  render_view 'resources/faq'
 end
 
 get '/support' do
   @page_title = "Explorer California: Support"
-  erb :support
+  render_view :support
 end
 
 get '/tours' do
   @page_title = "Explorer California: Tours"
-  erb :tours
+  render_view :tours
 end
 
 get '/tours/tour_detail_backpack' do
   @page_title = "Explorer California: Tours- Backpack cal"
-  erb :'tours/tour_details_backpack'.to_sym
+  render_view 'tours/tour_details_backpack'
 end
 
 get '/tours/tour_detail_bigsur' do
   @page_title = "Explorer California: Tours -  Bigsur Retreat"
-  erb :'tours/tour_details_bigsur'.to_sym
+  render_view 'tours/tour_details_bigsur'
 end
