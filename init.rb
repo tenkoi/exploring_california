@@ -40,6 +40,8 @@ end
 
 get '/tours' do
   @page_title = "Explorer California: Tours"
+  # @h1_title  ="<script> alert('Gotcha!');</script>"
+    @h1_title  ="Our Tours"
   render_view :tours
 end
 
