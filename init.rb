@@ -4,6 +4,12 @@ enable :sessions
 set :session_secret, '73681636238798273287362893872634538236'
 
 require_relative('helpers.rb')
+Dir[settings.root + "/classes/*.rb"].each{|file| require file}
+
+before do
+  @user = User.new
+  @user.username ='guest'
+end
 
 get '/' do
   @page_title = "Welcome to Exploring California"
@@ -80,4 +86,8 @@ get '/get_session' do
   output <<  "Current time: #{Time.now}"
   output
 
+end
+
+get '/username' do
+  "username: #{@user.username}"
 end
