@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/cookies'
 
 require_relative('helpers.rb')
 
@@ -53,4 +54,16 @@ end
 get '/tours/tour_detail_bigsur' do
   @page_title = "Explorer California: Tours -  Bigsur Retreat"
   render_view 'tours/tour_details_bigsur'
+end
+
+get '/set_cookie' do
+  cookies[:time] = Time.now.to_s
+  "cookies was set"
+end
+
+get '/get_cookie' do
+  output = "Stored time: #{cookies[:time]}<br/>"
+  output <<  "Current time: #{Time.now}"
+  output
+
 end
