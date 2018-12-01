@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sinatra/cookies'
+enable :sessions
+set :session_secret, '73681636238798273287362893872634538236'
 
 require_relative('helpers.rb')
 
@@ -63,6 +65,18 @@ end
 
 get '/get_cookie' do
   output = "Stored time: #{cookies[:time]}<br/>"
+  output <<  "Current time: #{Time.now}"
+  output
+
+end
+
+get '/set_session' do
+  session[:time] = Time.now.to_s
+  "session was set"
+end
+
+get '/get_session' do
+  output = "Stored time: #{session[:time]}<br/>"
   output <<  "Current time: #{Time.now}"
   output
 
